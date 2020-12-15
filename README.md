@@ -1,7 +1,5 @@
 # react-native-video-controls
 
-[![ci][1]][2]
-
 Controls for the React Native `<Video>` component at [react-native-video](https://github.com/react-native-community/react-native-video). For support with RN 0.45 or lower use version 1.3.1 or lower.
 
 ## Features
@@ -32,7 +30,7 @@ For basic operation the `<VideoPlayer>` component requires a video source and a 
 // At the top where our imports are...
 import VideoPlayer from 'react-native-video-controls';
 
-// in the component's render() function
+components
 <VideoPlayer
   source={{uri: 'https://vjs.zencdn.net/v/oceans.mp4'}}
   navigator={this.props.navigator}
@@ -97,6 +95,3 @@ These are the various controls that you can turn on/off as needed. All of these 
 | disableVolume     | Hide the Volume control    |
 | disableTimer      | Hide the timer             |
 | disableBack       | Hide the back button       |
-
-[1]: https://github.com/itsnubix/react-native-video-controls/workflows/ci/badge.svg
-[2]: https://github.com/itsnubix/react-native-video-controls/actions

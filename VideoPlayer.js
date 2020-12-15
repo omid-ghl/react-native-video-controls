@@ -163,7 +163,7 @@ export default class VideoPlayer extends Component {
     | Events
     | -------------------------------------------------------
     |
-    | These are the events that the <Video> component uses
+    | These are the events that the <Video> components uses
     | and can be overridden by assigning it as a prop.
     | It is suggested that you override onEnd.
     |
@@ -265,7 +265,7 @@ export default class VideoPlayer extends Component {
    * Set the error state to true which then
    * changes our renderError function
    *
-   * @param {object} err  Err obj returned from <Video> component
+   * @param {object} err  Err obj returned from <Video> components
    */
   _onError(err) {
     let state = this.state;
@@ -433,8 +433,6 @@ export default class VideoPlayer extends Component {
       let state = this.state;
       state.showControls = false;
       this.hideControlAnimation();
-      typeof this.events.onHideControls === 'function' &&
-        this.events.onHideControls();
 
       this.setState(state);
     }
@@ -465,7 +463,7 @@ export default class VideoPlayer extends Component {
 
   /**
    * Toggle fullscreen changes resizeMode on
-   * the <Video> component then updates the
+   * the <Video> components then updates the
    * isFullscreen state.
    */
   _toggleFullscreen() {
@@ -489,7 +487,7 @@ export default class VideoPlayer extends Component {
   }
 
   /**
-   * Toggle playing state on <Video> component
+   * Toggle playing state on <Video> components
    */
   _togglePlayPause() {
     let state = this.state;
@@ -697,7 +695,7 @@ export default class VideoPlayer extends Component {
     | -------------------------------------------------------
     |
     | Here we're initializing our listeners and getting
-    | the component ready using the built-in React
+    | the components ready using the built-in React
     | Component methods
     |
     */
@@ -746,7 +744,7 @@ export default class VideoPlayer extends Component {
   }
 
   /**
-   * When the component is about to unmount kill the
+   * When the components is about to unmount kill the
    * timeout less it fire in the prev/next scene
    */
   componentWillUnmount() {
@@ -790,22 +788,15 @@ export default class VideoPlayer extends Component {
         this.setSeekerPosition(position);
         let state = this.state;
 
-        if (
-          this.player.scrubbingTimeStep > 0 &&
-          !state.loading &&
-          !state.scrubbing
-        ) {
+        if (this.player.scrubbingTimeStep > 0 && !state.loading && !state.scrubbing) {
           const time = this.calculateTimeFromSeekerPosition();
           const timeDifference = Math.abs(state.currentTime - time) * 1000;
 
-          if (
-            time < state.duration &&
-            timeDifference >= this.player.scrubbingTimeStep
-          ) {
+          if (time < state.duration && timeDifference >= this.player.scrubbingTimeStep) {
             state.scrubbing = true;
 
             this.setState(state);
-            setTimeout(() => {
+            setTimeout( () => {
               this.player.ref.seek(time, this.player.scrubbingTimeStep);
             }, 1);
           }
@@ -1183,7 +1174,7 @@ export default class VideoPlayer extends Component {
   }
 
   /**
-   * Provide all of our options and render the whole component.
+   * Provide all of our options and render the whole components.
    */
   render() {
     return (

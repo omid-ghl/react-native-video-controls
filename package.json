@@ -1,6 +1,6 @@
 {
   "name": "react-native-video-controls",
-  "version": "2.7.1",
+  "version": "2.6.0",
   "description": "A set of GUI controls for the react-native-video component",
   "license": "MIT",
   "main": "VideoPlayer.js",
@@ -11,7 +11,6 @@
     "react video player"
   ],
   "scripts": {
-    "lint": "eslint .",
     "test": "echo \"No test specified\" && exit 1"
   },
   "author": "Nubix (https://github.com/itsnubix)",
@@ -24,7 +23,7 @@
   },
   "peerDependencies": {
     "react-native": ">=0.46.0",
-    "react-native-video": ">=2.0.0"
+    "react-native-video": "^2.0.0"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.5",
